@@ -1,0 +1,830 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap')
+@import "variables"
+@import "animations"
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Montserrat', sans-serif
+  font-size: $font-size-main
+  font-weight: 300
+  line-height: 1.4
+  letter-spacing: 1.5px
+  text-decoration: none
+  color: $dark
+main
+  overflow: hidden
+.backToTop
+  cursor: pointer
+  position: fixed
+  z-index: 100
+  width: 45px
+  height: 45px
+  right: - 100px
+  bottom: 30px
+  border-radius: 50%
+  padding: 5px
+  border: $dark solid 4px
+  transition: 0.3s
+.backToTop.back_to_top-show
+  right: 30px
+
+.equipment
+  margin-top: 15px
+  position: relative
+  display: flex
+  justify-content: space-between
+  width: 100%
+  &__name
+    span.nowrap
+      white-space: nowrap
+    span.dash
+      &:before
+        content: ""
+        position: absolute
+        top: 1rem
+        z-index: -1
+        width: 100%
+        border-bottom: 0.11rem dashed lightgray
+    span
+      background-color: #fff
+  &__amount
+    white-space: nowrap
+    background-color: #fff
+    display: inline-block
+
+.title
+  font-size: 24px
+  font-weight: 300
+  line-height: 1.4
+.pop
+  display: none
+  position: relative
+  box-sizing: border-box
+  grid-template-columns: minmax(0, 100%)
+  width: 32em
+  max-width: 100%
+  padding: 0 0 1.25em
+  border: none
+  border-radius: 0
+  background: #fff
+  color: #545454
+  font-family: inherit
+  font-size: 1rem
+.container
+  max-width: 1400px
+  margin: 0 auto
+  padding: 0 40px
+
+.headlines
+  color: $dark
+  margin-top: 140px
+  font-size: $font-size-headlines
+  text-align: center
+
+.headlines_h3
+  color: $dark
+  font-size: $font-size-headlines
+  text-align: center
+
+.headlines__hr
+  width: 120px
+  margin: 30px auto
+  height: 1px
+  background-color: $dark
+  border: none
+
+.btn
+  display: inline-block
+  text-decoration: none
+  background-color: white
+  color: $dark
+  border: $dark solid 1px
+  padding: 10px 50px
+  transition: 0.3s
+  &:hover
+    background-color: $dark
+    color: white
+    cursor: pointer
+  &_white
+    color: white
+    background-color: rgba(0,0,0,0)
+    border: white solid 1px
+    &:hover
+      background-color: white
+      color: $dark
+      cursor: pointer
+
+.header
+  position: relative
+  height: 100vh
+  background: radial-gradient(#2f2f2f, #191919)
+  animation-name: radius
+  animation-fill-mode: forwards
+  animation-duration: 2s
+  animation-delay: 7s
+  &_main
+    background: white
+    animation: none
+    height: auto
+  &_mobile
+    display: none
+  &__head
+    padding-top: 40px
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__preview
+    height: 0
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    opacity: 0
+    animation-name: zoomin
+    animation-duration: 4s
+    animation-delay: 1s
+  &__logo
+    width: 150px
+    opacity: 0
+    visibility: hidden
+    animation-name: fadein
+    animation-fill-mode: forwards
+    animation-duration: 3s
+    animation-delay: 5s
+    &_main
+      visibility: visible
+      animation: none
+      opacity: 1
+    &_mobile
+      display: none
+      visibility: visible
+      width: 45px
+      animation: none
+      opacity: 1
+  &__slogan
+    color: white
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    font-size: 36px
+    letter-spacing: 2px
+    text-align: center
+    line-height: 1.6
+    opacity: 0
+    animation-name: fadeIn
+    animation-fill-mode: forwards
+    animation-duration: 3s
+    animation-delay: 5s
+  &__nav
+    opacity: 0
+    visibility: hidden
+    animation-name: fadein
+    animation-fill-mode: forwards
+    animation-duration: 3s
+    animation-delay: 5s
+    .nav_active
+      &:after
+        width: 100%
+    a
+      position: relative
+      cursor: pointer
+      text-decoration: none
+      color: white
+      font-size: $font-size-main - 2px
+      margin-left: 25px
+      line-height: 1.8
+      letter-spacing: 1.8px
+      &:after
+        display: block
+        position: absolute
+        right: 0
+        width: 20px
+        height: 1px
+        background-color: white
+        content: ""
+        transition: width 0.3s ease-out
+      &:hover:after
+        width: 100%
+    &_main
+      visibility: visible
+      opacity: 1
+      animation: none
+      a
+        color: $dark
+        font-weight: 400
+        &:after
+          background-color: $dark
+  &__burger
+    width: 40px
+    height: 30px
+    z-index: 101
+    position: relative
+    display: none
+    &.active
+      &::after
+        transform: rotate(-45deg)
+        bottom: 14px
+      &::before
+        top: 14px
+        transform: rotate(45deg)
+      span
+        transform: scale(0)
+    span
+      position: absolute
+      background-color: $dark
+      right: 0
+      width: 80%
+      height: 2px
+      top: 14px
+      transition: all 0.3s ease 0s
+    &::before, &::after
+      content: ''
+      background-color: $dark
+      position: absolute
+      width: 100%
+      height: 2px
+      left: 0
+      transition: 0.3s
+    &::before
+      top: 0
+    &::after
+      bottom: 0
+.about
+  &__text
+    margin: 80px 0 0 0
+.wedo
+  &__cards
+    margin-top: 80px
+    display: grid
+    grid-template-columns: 1fr
+  &__card
+    display: grid
+    grid-template-columns: 1fr 1fr
+  &__photo
+    img
+      height: 100%
+      width: 100%
+  &__info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  &__text
+    margin-top: 40px
+    text-align: center
+    max-width: 50%
+  &__btn
+    margin-top: 40px
+
+.form
+  margin-top: 160px
+  position: relative
+  border: $dark solid 1px
+  &__headlines
+    margin: 0
+    position: absolute
+    left: 50%
+    top: -20px
+    background-color: white
+    padding: 0 20px
+    transform: translate(-50%)
+  &__text
+    margin: 60px auto
+    width: 40%
+    text-align: center
+  &__input
+    margin-bottom: 60px
+    padding: 10px 20px
+    border: none
+    width: 48%
+    border-bottom: $dark solid 1px
+    &_text
+      width: 100%
+    &:focus
+      outline: none
+  form
+    width: 60%
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+  &__btn
+    margin: 0 auto 60px
+
+.footer
+  background-color: #2f2f2f
+  border-radius: 0 400px 0 0
+  margin-top: 140px
+  &__nav
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    border-bottom: 0.5px white solid
+  &__link
+    font-size: $font-size-main - 4px
+    color: white
+    margin: 25px 30px
+  &__contact
+    padding: 20px 0 20px 0
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    a
+      font-size: $font-size-main - 2px
+      line-height: 30px
+      align-items: center
+      text-align: center
+      color: white
+      transition: 0.3s
+      &:hover
+        transform: scale(1.1)
+  &__social
+    display: flex
+    justify-content: center
+    img
+      height: 25px
+      margin: 0 10px
+      transition: 0.3s
+      vertical-align: middle
+      &:hover
+        cursor: pointer
+        transform: scale(1.3)
+
+.works
+  margin-top: 140px
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 20px
+  &__card
+    position: relative
+    max-height: 400px
+    overflow: hidden
+    img
+      transition: 0.4s
+      width: 100%
+      height: 100%
+    &:hover > img
+      transform: scale(1.05)
+
+  &__info
+    opacity: 0
+    background-color: rgba(0,0,0, .8)
+    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    top: 0
+    width: 100%
+    height: 100%
+    transition: 0.4s
+    p
+      transition: 0.4s
+      transform: translate(0, -25px)
+      width: 75%
+      color: white
+    .btn
+      transition: 0.4s
+      transform: translate(0, -25px)
+      margin-top: 30px
+    &:hover
+      opacity: 1
+      p
+        transform: translate(0, 0)
+      .btn
+        transform: translate(0, 0)
+
+
+.project
+  &__video
+    margin: 80px auto 0 auto
+    width: 80%
+    height: 600px
+  &__info
+    margin-top: 80px
+  &__gallery
+    margin-top: 80px
+    display: grid
+    grid-gap: 20px
+    grid-template-columns: 1fr 1fr
+    img
+      cursor: pointer
+      width: 100%
+      height: 100%
+
+.overlay
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, .5)
+  z-index: 20
+  transition: .3s all
+
+.modal
+  img
+    height: 110%
+  opacity: 0
+  visibility: hidden
+  width: 100%
+  max-width: 1400px
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 30
+  text-align: center
+  background-color: rgba(0, 0, 0, 0)
+  transition: 0.3s all
+
+
+.modal.active,
+.overlay.active
+  opacity: 1
+  visibility: visible
+
+.contacts
+  &__info
+    text-align: center
+    margin-top: 80px
+  &__sections
+    margin-top: 80px
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+  &__phone,&__social, &__email
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+  &__link
+    margin-top: 10px
+    transition: 0.3s
+    &:hover
+      transform: scale(1.05)
+  &__icons
+    margin-top: 15px
+    display: flex
+  &__icon
+    height: 36px
+    margin: 0 5px
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+      transform: scale(1.1)
+.aboutCompany
+  display: grid
+  grid-template-columns: 1fr 2fr
+  align-items: center
+  grid-gap: 60px
+  margin-top: 80px
+  &__img
+    width: 100%
+  &__video
+    position: relative
+    &.play::before
+      border-style: none
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      border-style: solid
+      border-width: 35px 0 35px 70px
+      border-color: transparent transparent transparent $dark
+  &__citation
+    margin-top: 80px
+    text-align: center
+    line-height: 1.9
+  &__colleagues
+    margin: 0 0 40px 0
+.format
+  &__info
+    margin-top: 80px
+  &__images
+    margin-top: 80px
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: 1fr 1fr
+    img
+      width: 100%
+      height: 100%
+
+.hinge__media
+  margin: 80px auto 0
+  display: grid
+  grid-gap: 10px
+  width: 60%
+  grid-template-columns: 4fr 6fr
+  img
+    width: 100%
+    height: 100%
+  .hinge__video
+    width: 100%
+    grid-column-start: 2
+    grid-column-end: 2
+    grid-row-start: 1
+    grid-row-end: 4
+.partners
+  &__map
+    width: 100%
+    margin: 80px auto
+    height: 400px
+  &__cards
+    margin: 80px 0 20px
+    display: grid
+    grid-gap: 40px
+    grid-template-columns: 1fr 1fr 1fr 1fr
+  &__card
+    height: 100%
+    z-index: 100
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 20px 30px
+    text-align: center
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15)
+    cursor: pointer
+    transition: 0.6s
+    &:hover
+      transform: scale(1.08)
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25)
+    h3
+      font-weight: 400
+    p
+      margin-top: 20px
+.list
+  list-style-type: none
+  margin: 20px 0
+  &__headlines
+    margin-bottom: 20px
+  &__item
+    line-height: 1.8
+    position: relative
+    padding-left: 25px
+    &:before
+      content:  "—"
+      position: relative
+      left:     -5px
+.questions
+  margin-top: 100px
+  &__card
+    margin-top: 80px
+  &__headlines
+    margin-bottom: 25px
+    font-size: $font-size-main + 4
+.aboutProducts
+  margin-top: 100px
+  display: grid
+  grid-gap: 40px
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  &__headlines
+    font-weight: 400
+  &__card
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 20px 30px
+    text-align: center
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15)
+    cursor: pointer
+    transition: 0.6s
+    &:hover
+      transform: scale(1.08)
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25)
+  &__info
+    margin-top: 20px
+.products
+  margin-top: 100px
+.product
+  margin-top: 100px
+  &__wrap
+    position: relative
+    border: 1px solid $dark
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  &__headlines
+    margin-top: 0
+    position: absolute
+    left: 50%
+    top: -20px
+    background-color: white
+    padding: 0 20px
+    transform: translate(-50%)
+  &__text
+    margin: 60px auto 40px
+    width: 80%
+    text-align: center
+  &__btn
+    margin-bottom: 60px
+  &__swiper
+    width: 80%
+    margin-top: 80px
+
+.swiper-slide img
+  display: block
+  width: 100%
+
+.swiper-button-next
+  transform: rotate(90deg)
+.swiper-button-prev
+  transform: rotate(-90deg)
+.modalFormSend
+  border-radius: 0
+@media only screen and (max-width: 1440px)
+  .gray
+    background-color: #f8f8f8
+  .product
+    margin-top: 0
+    &__wrap
+      border: none
+    &__headlines
+      margin-top: 60px
+      position: static
+      background: none
+      transform: none
+    &__swiper
+      margin-top: 60px
+    &__btn
+      background: none
+  .aboutProducts
+    grid-template-columns: 1fr 1fr
+  .partners__cards
+    grid-template-columns: 1fr 1fr
+  body.lock
+    overflow: hidden
+  .header__nav
+    z-index: 100
+    position: fixed
+    background-color: white
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    top: 0
+    left: 100%
+    width: 100%
+    height: 100%
+    visibility: visible
+    opacity: 1
+    animation: none
+    transition: 0.6s
+    &.active
+      left: 0
+    a
+      margin: 20px 0
+      color: $dark
+      font-weight: 400
+      &:after
+        right: 50%
+        transform: translate(50% ,0)
+        background-color: $dark
+  .header__burger
+    display: block
+  .header
+    height: auto
+    background: white
+    &__logo
+      display: none
+    &__logo_mobile
+      display: block
+    &__preview
+      display: none
+    &__slogan
+      display: none
+
+  .wedo
+    &__cards
+    &__card
+      grid-gap: 60px
+      grid-template-columns: 1fr
+    &__info
+      order: 0
+      margin-top: 80px
+    &__text
+      max-width: 80%
+    &__photo
+      order: 1
+      width: 80%
+      margin: 0 auto 80px
+    &__btn
+      background-color: rgba(0, 0, 0, 0)
+    .gray
+      background-color: #f8f8f8
+  .form
+    border: none
+    form
+      width: 80%
+    &__headlines
+      position: static
+      transform: none
+    &__text
+      width: 80%
+    &__input
+      width: 100%
+  .aboutCompany
+    grid-template-columns: 1fr
+    &__video
+      width: 60%
+      margin: 0 auto
+@media only screen and (max-width: 1024px)
+  .headlines
+    margin-top: 80px
+  .works
+    margin-top: 80px
+    grid-template-columns: 1fr
+    &__card
+      max-height: none
+  .format__images
+    grid-template-columns: 1fr
+  .project
+    &__video
+      height: 400px
+@media only screen and (max-width: 768px)
+  .hinge__media
+    width: 100%
+  .product
+    &__text
+      width: 100%
+    &__swiper
+      width: 100%
+    &__wrap
+  .aboutProducts
+    grid-template-columns: 1fr
+  .partners__cards
+    grid-template-columns: 1fr
+  .headlines
+    margin-top: 80px
+  .footer
+    position: relative
+    overflow: hidden
+    margin-top: 80px
+    width: 100%
+    border-radius: 0
+    transition: 0.3s
+    &__contact
+      display: flex
+      flex-direction: column
+    &__email
+      order: 0
+    &__phone
+      order: 1
+    &__social
+      order: 3
+      margin-top: 10px
+  .contacts
+    &__sections
+      display: grid
+      grid-gap: 60px
+      grid-template-columns: 1fr
+    &__email
+      order: 0
+    &__phone
+      order: 1
+    &__social
+      order: 2
+  .works__info
+    p, a
+      font-size: 12px
+  .project
+    &__gallery
+      grid-template-columns: 1fr
+    &__video
+      width: 100%
+      height: 250px
+@media only screen and (max-width: 425px)
+  .container
+    padding: 0 20px
+  .product
+    &__headlines
+      margin-top: 40px
+  *
+    font-size: 14px
+  .form
+    margin-top: 80px
+    form
+      width: 100%
+    &__text
+      width: 100%
+  .headlines, .headlines_h3
+    font-size: 20px
+  .aboutCompany
+    &__video
+      width: 100%
+      margin: 0 auto
+  .questions__headlines
+    font-size: 16px
+  .works__info
+    p, a
+      font-size: 10px
+    .btn
+      margin-top: 10px

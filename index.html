@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Format Interior</title>
+    <link rel="shortcut icon" href="img/logo/mobile_logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<header id="header" class="header">
+    <div class="container">
+        <div class="header__head">
+            <img id="logo" class="header__logo" src="img/logo/horizontal_logo_white.svg" alt="horizontal_logo">
+            <img class="header__logo header__logo_mobile" src="img/logo/mobile_logo.svg" alt="mobile_logo">
+            <div id='burger' class="header__burger">
+                <span></span>
+            </div>
+            <nav id="nav" class="header__nav">
+                <a class="nav_active" href="#">ГЛАВНАЯ</a>
+                <a href="pages/aboutUs.html">О НАС</a>
+                <a href="pages/products/products.html">ПРОДУКТЫ</a>
+                <a href="./pages/contacts.html">КОНТАКТЫ</a>
+            </nav>
+        </div>
+    </div>
+    <img id="preview" class="header__preview" src="img/logo/logo_main_white.svg" alt="logo_main">
+    <h1 id="slogan" class="header__slogan">ИДЕАЛЬНЫЙ ФОРМАТ<br>ВАШЕГО ИНТЕРЬЕРА</h1>
+</header>
+<main>
+    <div class="container">
+        <section class="about">
+            <h2 class="about__headlines headlines wow animate__animated animate__fadeInDown" data-wow-duration="2s">FORMAT INTERIOR</h2>
+            <hr class="headlines__hr wow animate__animated animate__zoomIn" data-wow-duration="2s">
+            <p class="about__text wow animate__animated animate__fadeInUp" data-wow-duration="2s">Для нас интерьер – это единый организм, в котором опору создаёт общестроительный процесс, артериями в системе становятся инженерные коммуникации и всё это покрывается дизайнерской оболочкой.</p>
+        </section>
+    </div>
+        <section class="wedo">
+            <div class="container">
+                <h2 class="wedo__headlines headlines wow animate__animated animate__fadeInDown" data-wow-duration="2s">МЫ ЗАНИМАЕМСЯ</h2>
+                <hr class="headlines__hr wow animate__animated animate__zoomIn" data-wow-duration="2s">
+            </div>
+            <div class="wedo__cards">
+                <div class="wedo__card gray">
+                    <div class="wedo__info wow animate__animated animate__fadeInLeft" data-wow-duration="2s">
+                        <h3 class="wedo__headlines headlines_h3">Реализацией интерьеров</h3>
+                        <p class="wedo__text">При реализации интерьера для нас важен гармоничный альянс эстетического и технического процесса.</p>
+                        <a href="pages/products/premiumFormat.html" class="wedo__btn btn">Подробнее</a>
+                    </div>
+                    <div class="wedo__photo"><img src="img/wedo/1.JPG" alt=""></div>
+                </div>
+                <div class="wedo__card">
+                    <div class="wedo__photo"><img src="img/wedo/2.JPG" alt=""></div>
+                    <div class="wedo__info wow animate__animated animate__fadeInRight" data-wow-duration="2s">
+                        <h3 class="wedo__headlines headlines_h3">Инженерными решениями</h3>
+                        <p class="wedo__text">При реализации инженерных решений для нас важен опыт и профессионализм исполнителей на каждом этапе.</p>
+                        <a href="pages/products/baseFormat.html" class="wedo__btn btn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="wedo__card gray">
+                    <div class="wedo__info wow animate__animated animate__fadeInLeft" data-wow-duration="2s">
+                        <h3 class="wedo__headlines headlines_h3">Производственным направлением</h3>
+                        <p class="wedo__text">При разработке петель FORMAT Interior мы объединили потребности в стабильности плавного открывания и устойчивости к изгибаниям и провисаниям поворотных конструкций, а также потребности в простоте проектирования и реализации конструкций из профильных систем.</p>
+                        <a href="pages/products/hingeFormat.html" class="wedo__btn btn">Подробнее</a>
+                    </div>
+                    <div class="wedo__photo"><img src="img/wedo/3.JPG" alt=""></div>
+                </div>
+            </div>
+        </section>
+    <div class="container">
+        <section class="form wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <h2 class="form__headlines headlines">ОСТАВИТЬ ЗАЯВКУ</h2>
+            <p class="form__text">Сделайте здесь запрос на любой из наших продуктов, и мы свяжемся с вами в ближайшее время. Отправляя заявку, вы даёте согласие на обработку персональных данных.</p>
+            <form id="form" action="#">
+                <input name="name" class="form__input" type="text" placeholder="Имя" required>
+                <input name="phone" class="form__input" type="tel" placeholder="Телефон" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                <input name="comment" class="form__input form__input_text" type="text" placeholder="Описание вопроса" required>
+                <button class="form__btn btn">Отправить</button>
+            </form>
+        </section>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__contact">
+            <a class="footer__phone" href="tel:+79253112526">+7(925)311-25-26</a>
+            <div class="footer__social">
+                <a target="_blank" href="https://instagram.com/formatinterior.pro?igshid=YmMyMTA2M2Y="><img src="img/icons/inst.svg" alt=""></a>
+                <a target="_blank" href="https://t.me/formatineriorpro"><img src="img/icons/telegram.svg" alt=""></a>
+                <a target="_blank" href="https://vk.com/formatinteriorpro"><img src="img/icons/vk.svg" alt=""></a>
+            </div>
+            <a class="footer__email" href="mailto:info@formatinterior.pro">info@formatinterior.pro</a>
+        </div>
+    </div>
+</footer>
+<script src="lib/wow.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/formSend.js"></script>
+<script src="js/skipPreview.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

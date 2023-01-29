@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Format Interior</title>
+  <link rel="shortcut icon" href="../img/logo/mobile_logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="../lib/animate.min.css"/>
+  <link rel="stylesheet" href="../styles/style.css">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+  <header class="header header_main">
+    <div class="container">
+      <div class="header__head">
+        <a  class="header__logo header__logo_main" href="../index.html"><img src="../img/logo/horizontal_logo.svg" alt="horizontal_logo"></a>
+        <a  class="header__logo header__logo_mobile" href="../index.html"><img src="../img/logo/mobile_logo.svg" alt="mobile_logo"></a>
+        <div id='burger' class="header__burger">
+          <span></span>
+        </div>
+        <nav class="header__nav header__nav_main">
+          <a  href="../index.html">ГЛАВНАЯ</a>
+          <a  href="./aboutUs.html">О НАС</a>
+          <a href="products/products.html">ПРОДУКТЫ</a>
+          <a class="nav_active" href="#">КОНТАКТЫ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+<main>
+  <div class="container">
+    <section class="contacts">
+      <h2 class="contacts__headlines headlines wow animate__animated animate__fadeInDown" data-wow-duration="2s">КОНТАКТЫ</h2>
+      <hr class="headlines__hr wow animate__animated animate__zoomIn" data-wow-duration="2s">
+      <p class="contacts__info wow animate__animated animate__fadeInUp" data-wow-duration="2s">Вы можете связаться с нами в рабочее время одним из представленных ниже способов.<br> <br>
+        Наш график работы: понедельник – пятница с 9:30 до 19:00<br>
+        Суббота,воскресенье,праздничные дни – выходной
+      </p>
+      <div class="contacts__sections wow animate__animated animate__fadeInUp" data-wow-duration="2s">
+        <div class="contacts__phone">
+          <p>Телефон</p>
+          <a class="contacts__link" href="tel:+79253112526">+7(925)311-25-26</a>
+        </div>
+        <div class="contacts__social">
+          <p>Социальные сети</p>
+          <div class="contacts__icons">
+            <a target="_blank" href="https://instagram.com/formatinterior.pro?igshid=YmMyMTA2M2Y="><img class="contacts__icon" src="../img/icons/inst_dark.svg" alt=""></a>
+            <a target="_blank" href="https://t.me/formatineriorpro"><img class="contacts__icon" src="../img/icons/telegram_dark.svg" alt=""></a>
+            <a target="_blank" href="https://vk.com/formatinteriorpro"><img class="contacts__icon" src="../img/icons/vk_dark.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="contacts__email">
+          <p>E-mail</p>
+          <a class="contacts__link" href="mailto:info@formatinterior.pro">info@formatinterior.pro</a>
+        </div>
+      </div>
+    </section>
+    <section class="form wow animate__animated animate__fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+      <h2 class="form__headlines headlines">ОСТАВИТЬ ЗАЯВКУ</h2>
+      <p class="form__text">Сделайте здесь запрос на любой из наших продуктов, и мы свяжемся с вами в ближайшее время. Отправляя заявку, вы даёте согласие на обработку персональных данных.</p>
+      <form id="form" action="#">
+        <input name="name" class="form__input" type="text" placeholder="Имя" required>
+        <input name="phone" class="form__input" type="tel" placeholder="Телефон" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+        <input name="comment" class="form__input form__input_text" type="text" required placeholder="Описание вопроса">
+        <button class="form__btn btn">Отправить</button>
+      </form>
+    </section>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__contact">
+      <a class="footer__phone" href="tel:+79253112526">+7(925)311-25-26</a>
+      <div class="footer__social">
+        <a target="_blank" href="https://instagram.com/formatinterior.pro?igshid=YmMyMTA2M2Y="><img src="../img/icons/inst.svg" alt=""></a>
+        <a target="_blank" href="https://t.me/formatineriorpro"><img src="../img/icons/telegram.svg" alt=""></a>
+        <a target="_blank" href="https://vk.com/formatinteriorpro"><img src="../img/icons/vk.svg" alt=""></a>
+      </div>
+      <a class="footer__email" href="mailto:info@formatinterior.pro">info@formatinterior.pro</a>
+    </div>
+  </div>
+</footer>
+<script src="../lib/wow.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/formSend.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>
