@@ -433,7 +433,7 @@ main {
   margin: 25px 30px;
 }
 .footer__contact {
-  padding: 20px 0 20px 0;
+  padding: 22px 0 22px 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -449,18 +449,36 @@ main {
   transform: scale(1.1);
 }
 .footer__social {
+  transform: translate(0, -8px);
+  position: relative;
   display: flex;
   justify-content: center;
+}
+.footer__social:before {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  content: "* Instagram запрещён в РФ";
+  font-size: 9px;
+  color: white;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+.footer__social a {
+  position: relative;
+}
+.footer__social a:first-child:before {
+  position: absolute;
+  top: -8px;
+  left: 2px;
+  content: "*";
+  color: white;
 }
 .footer__social img {
   height: 25px;
   margin: 0 10px;
   transition: 0.3s;
   vertical-align: middle;
-}
-.footer__social img:hover {
-  cursor: pointer;
-  transform: scale(1.3);
 }
 
 .works {
@@ -596,15 +614,40 @@ main {
 .contacts__link:hover {
   transform: scale(1.05);
 }
+.contacts__social {
+  position: relative;
+}
+.contacts__social:before {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  white-space: nowrap;
+  content: "* Instagram запрещён в РФ";
+  font-size: 9px;
+  color: #4a4949;
+  transform: translate(-50%, -50%);
+}
 .contacts__icons {
+  position: relative;
   margin-top: 15px;
   display: flex;
+}
+.contacts__icons a {
+  position: relative;
+}
+.contacts__icons a:first-child:before {
+  position: absolute;
+  top: -8px;
+  left: -2px;
+  content: "*";
+  color: #5f5e5d;
 }
 .contacts__icon {
   height: 36px;
   margin: 0 5px;
   cursor: pointer;
   transition: 0.3s;
+  position: relative;
 }
 .contacts__icon:hover {
   transform: scale(1.1);
@@ -986,6 +1029,7 @@ main {
     margin-top: 80px;
   }
   .footer {
+    padding-bottom: 10px;
     position: relative;
     overflow: hidden;
     margin-top: 80px;
@@ -1005,7 +1049,7 @@ main {
   }
   .footer__social {
     order: 3;
-    margin-top: 10px;
+    margin-top: 15px;
   }
   .contacts__sections {
     display: grid;
