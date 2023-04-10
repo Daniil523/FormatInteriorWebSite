@@ -391,7 +391,7 @@ main {
   text-align: center;
 }
 .form__input {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   padding: 10px 20px;
   border: none;
   width: 48%;
@@ -413,6 +413,78 @@ main {
 }
 .form__btn {
   margin: 0 auto 60px;
+}
+
+.checkbox.style-a {
+  margin-bottom: 40px;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Скрываем стандарный input */
+.checkbox.style-a input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Если input отмечен(:checked), то .checkbox__checkmark(область отметки), применяет данные стили */
+.checkbox.style-a input:checked ~ .checkbox__checkmark {
+  background-color: #fff;
+}
+
+/* Если input отмечен(:checked), то псевдо-элемент .checkbox__checkmark:after(отметка-галочка), применяет данные стили */
+.checkbox.style-a input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+}
+
+/* При наведении(:hover) на всю область checkbox элемент .checkbox__checkmark(область отметки) применяет данные стили*/
+.checkbox.style-a:hover input ~ .checkbox__checkmark {
+  background-color: #eee;
+}
+
+/* При наведении(:hover) на всю область checkbox и при отмеченном input  элемент .checkbox__checkmark(область отметки) применяет данные стили*/
+.checkbox.style-a:hover input:checked ~ .checkbox__checkmark {
+  background-color: #fff;
+}
+
+/* Исходные стили для области отметки .checkbox__checkmark */
+.checkbox.style-a .checkbox__checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #fff;
+  border: 1px solid #333;
+  transition: background-color 0.25s ease;
+}
+
+/* Исходные стили для отметки .checkbox__checkmark:after */
+.checkbox.style-a .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #333;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Исходные стили для области описания .checkbox__body*/
+.checkbox.style-a .checkbox__body {
+  color: #333;
+  line-height: 1.4;
+  font-size: 16px;
 }
 
 .footer {

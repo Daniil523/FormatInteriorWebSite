@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Format Interior</title>
-    <link rel="shortcut icon" href="../../img/logo/mobile_logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../img/logo/mobile_logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="../../styles/style.css">
-    <link rel="stylesheet" href="../../lib/animate.min.css"/>
+    <link rel="stylesheet" href="../../../styles/style.css">
+    <link rel="stylesheet" href="../../../lib/animate.min.css"/>
     <meta name="viewport" content="width=device-width">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
@@ -25,21 +25,23 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/92454389" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=d28caae7-ef35-402c-8a01-2ab89a2262cf" type="text/javascript"></script>
+    <script src="../../../js/partnersMap.js" type="text/javascript"></script>
 </head>
 <body>
 <header class="header header_main">
     <div class="container">
         <div class="header__head">
-            <a  class="header__logo header__logo_main" href="../../index.html"><img src="../../img/logo/horizontal_logo.svg" alt="horizontal_logo"></a>
-            <a  class="header__logo header__logo_mobile" href="../../index.html"><img src="../../img/logo/mobile_logo.svg" alt="mobile_logo"></a>
+            <a  class="header__logo header__logo_main" href="../../../index.html"><img src="../../../img/logo/horizontal_logo.svg" alt="horizontal_logo"></a>
+            <a  class="header__logo header__logo_mobile" href="../../../index.html"><img src="../../../img/logo/mobile_logo.svg" alt="mobile_logo"></a>
             <div id='burger' class="header__burger">
                 <span></span>
             </div>
             <nav class="header__nav header__nav_main">
-                <a href="../../index.html">ГЛАВНАЯ</a>
-                <a href="../aboutUs.html">О НАС</a>
-                <a class="nav_active" href="products.html">ПРОДУКТЫ</a>
-                <a href="../contacts.html">КОНТАКТЫ</a>
+                <a href="../../../index.html">ГЛАВНАЯ</a>
+                <a href="../../aboutUs.html">О НАС</a>
+                <a class="nav_active" href="../products.html">ПРОДУКТЫ</a>
+                <a href="../../contacts.html">КОНТАКТЫ</a>
             </nav>
         </div>
     </div>
@@ -133,7 +135,7 @@
                 </div>
                 <div class="equipment">
                     <div class="equipment__name">
-                        <span><span class="dash">Инструкция</span></span>
+                        <span><span class="dash">Инструкция (<a target="_blank" href="../../../img/products/hinge/1_2_merged.pdf" style="border-bottom: 1px lightgray solid;">скачать pdf</a>)</span></span>
                     </div>
                     <div class="equipment__amount">
                         1 шт.
@@ -151,24 +153,27 @@
             </div>
             <div class="hinge__media">
                 <video loop preload="auto" poster="" controls class="hinge__video">
-                    <source src="../../img/hinge.MP4">
+                    <source src="../../../img/hinge.MP4">
                 </video>
-                <a href="../../img/products/hinge/1.JPG" data-fancybox="images" data-caption="My caption">
-                    <img src="../../img/products/hinge/1.JPG" class="wow animate__animated animate__fadeInUp" data-wow-duration="2s"/>
+                <a href="../../../img/products/hinge/1.JPG" data-fancybox="images" data-caption="My caption">
+                    <img src="../../../img/products/hinge/1.JPG" class="wow animate__animated animate__fadeInUp" data-wow-duration="2s"/>
                 </a>
-                <a href="../../img/products/hinge/2.JPG" data-fancybox="images" data-caption="My caption">
-                    <img src="../../img/products/hinge/2.JPG" class="wow animate__animated animate__fadeInUp" data-wow-duration="2s"/>
+                <a href="../../../img/products/hinge/2.JPG" data-fancybox="images" data-caption="My caption">
+                    <img src="../../../img/products/hinge/2.JPG" class="wow animate__animated animate__fadeInUp" data-wow-duration="2s"/>
                 </a>
-                <a href="../../img/products/hinge/3.JPG" data-fancybox="images" data-caption="My caption">
-                    <img src="../../img/products/hinge/3.JPG" class="wow animate__animated animate__fadeInUp" data-wow-duration="2s"/>
+                <a href="../../../img/products/hinge/3.JPG" data-fancybox="images" data-caption="My caption">
+                    <img src="../../../img/products/hinge/3.JPG" class="wow animate__animated animate__fadeInUp" data-wow-duration="2s"/>
                 </a>
             </div>
         </section>
         <section class="partners">
             <h2 class="partners__headlines headlines wow animate__animated animate__fadeInDown" data-wow-duration="2s">ПАРТНЁРЫ</h2>
             <hr class="headlines__hr wow animate__animated animate__zoomIn" data-wow-duration="2s">
+
+
             <div class="partners__map">
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A00e811dd0eaf6d0f4907139d12cc671d9e1f74f89ee45682d4525670e2dbbaa9&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                <div id="map" style="width: 100%; height: 100%; padding: 0; margin: 0;"></div>
+<!--                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A00e811dd0eaf6d0f4907139d12cc671d9e1f74f89ee45682d4525670e2dbbaa9&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>-->
             </div>
             <div class="partners__cards">
                 <a target="_blank" href="https://tece-market.ru/soputstvuyuschie-tovary/krepezh-format/petlya-dlya-profilya-tece-fi3004.html" class=" wow animate__animated animate__fadeInUp" data-wow-duration="2s">
@@ -195,7 +200,25 @@
                         <p class="aboutProducts__address">ул. Обручева, д. 35, корп. 2 / Симферопольский б-р, д. 31</p>
                     </div>
                 </a>
+                <a target="_blank" href="tel:+74212753015" class=" wow animate__animated animate__fadeInUp" data-wow-duration="2s">
+                    <div class="partners__card">
+                        <h3 class="partners__name">БауЛогик</h3>
+                        <p class="aboutProducts__address">г. Хабаровск, ул. Луговая, 10, оф. 17</p>
+                    </div>
+                </a>
             </div>
+        </section>
+        <section class="form wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <h2 class="form__headlines headlines">ОСТАВИТЬ ЗАЯВКУ</h2>
+            <p class="form__text">Сделайте здесь запрос на продукт "ПЕТЛИ FORMAT", и мы свяжемся с вами в ближайшее время. Отправляя заявку, вы даёте согласие на обработку персональных данных.</p>
+            <form id="form" action="#">
+                <input name="name" class="form__input" type="text" placeholder="Имя" required>
+                <input name="phone" class="form__input" type="tel" placeholder="Телефон" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                <input name="email" class="form__input form__input_text" type="text" placeholder="E-mail" required>
+                <input name="address" class="form__input form__input_text" type="text" placeholder="Ваш город" required>
+                <input name="comment" class="form__input form__input_text" type="text" placeholder="Дополнительная информация" required>
+                <button class="form__btn btn">Отправить</button>
+            </form>
         </section>
     </div>
 </main>
@@ -204,10 +227,10 @@
         <div class="footer__contact">
             <a class="footer__phone" href="tel:+79253112526">+7(925)311-25-26</a>
             <div class="footer__social">
-                <a target="_blank" href="https://instagram.com/formatinterior.pro?igshid=YmMyMTA2M2Y="><img src="../../img/icons/inst.svg" alt=""></a>
-                <a target="_blank" href="https://www.youtube.com/channel/UC1v7iy13C9EcXJbRYjcHsUg"><img src="../../img/icons/youtube.svg" alt=""></a>
-                <a target="_blank" href="https://t.me/formatineriorpro"><img src="../../img/icons/telegram.svg" alt=""></a>
-                <a target="_blank" href="https://vk.com/formatinteriorpro"><img src="../../img/icons/vk.svg" alt=""></a>
+                <a target="_blank" href="https://instagram.com/formatinterior.pro?igshid=YmMyMTA2M2Y="><img src="../../../img/icons/inst.svg" alt=""></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UC1v7iy13C9EcXJbRYjcHsUg"><img src="../../../img/icons/youtube.svg" alt=""></a>
+                <a target="_blank" href="https://t.me/formatineriorpro"><img src="../../../img/icons/telegram.svg" alt=""></a>
+                <a target="_blank" href="https://vk.com/formatinteriorpro"><img src="../../../img/icons/vk.svg" alt=""></a>
             </div>
             <a class="footer__email" href="mailto:info@formatinterior.pro">info@formatinterior.pro</a>
         </div>
@@ -215,7 +238,9 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="../../lib/wow.min.js"></script>
-<script src="../../js/script.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../../js/formSend.js"></script>
+<script src="../../../lib/wow.min.js"></script>
+<script src="../../../js/script.js"></script>
 </body>
 </html>
